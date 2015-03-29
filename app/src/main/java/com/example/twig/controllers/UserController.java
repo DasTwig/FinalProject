@@ -21,7 +21,7 @@ public class UserController {
     /**
      * Make constructor private so other classes can't create one.
      */
-    protected UserController() {
+    private UserController() {
     }
 
     /**

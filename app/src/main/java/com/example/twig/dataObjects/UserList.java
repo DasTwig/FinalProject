@@ -16,7 +16,7 @@ import java.util.ArrayList;
  * Created by Andrew on 2/18/2015.
  */
 public class UserList implements Serializable {
-    private static ArrayList<User> userlist = new ArrayList<User>();
+    private static ArrayList<User> userlist = new ArrayList<>();
     private static String filename;
 
     /**
@@ -63,7 +63,7 @@ public class UserList implements Serializable {
      * and typing "Team 57" into the password field (leave email and confirm-pass blank).
      */
     public static void deleteUserData() {
-        userlist = new ArrayList<User>();
+        userlist = new ArrayList<>();
         saveUserList();
     }
 

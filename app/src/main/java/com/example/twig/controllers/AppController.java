@@ -21,7 +21,7 @@ public class AppController {
     /**
      * Make constructor private so other classes can't create one.
      */
-    protected AppController() {
+    private AppController() {
     }
 
     /**
@@ -66,7 +66,7 @@ public class AppController {
      * @param username the string typed into the username field of the login screen
      * @param password the password typed into the password field of the login screen
      * @param activity the activity that called the method
-     * @return whether the login was succesfull or not
+     * @return whether the login was successful or not
      */
     public boolean login(String username, String password, LoginActivity activity) {
         for(User u: UserList.getUserList()) {

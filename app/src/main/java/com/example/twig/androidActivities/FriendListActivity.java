@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -17,14 +16,11 @@ import com.example.twig.finalproject.R;
 
 /**
  * Activity that displays a list of all of the current user's friends.
- * Each friend may be clicked on to launch a FriendDetailActivit
+ * Each friend may be clicked on to launch a FriendDetailActivity
  *
  * Created by Andrew on 1/29/2015.
  */
 public class FriendListActivity extends Activity implements OnItemClickListener {
-    private TextView txt;
-    private Button add;
-    private ListView friends;
 
     /**
      * Called upon activity creation. Creates the list/adapter,
@@ -37,9 +33,8 @@ public class FriendListActivity extends Activity implements OnItemClickListener 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_friendlist);
 
-        txt = (TextView) findViewById(R.id.txtNumFriends);
-        add = (Button) findViewById(R.id.btnAdd);
-        friends = (ListView) findViewById(R.id.friendList);
+        TextView txt = (TextView) findViewById(R.id.txtNumFriends);
+        ListView friends = (ListView) findViewById(R.id.friendList);
 
         FriendController friendController = FriendController.getFriendController();
 

@@ -32,10 +32,10 @@ public class LoginActivity extends Activity {
         String fillName = getIntent().getStringExtra("FROM_REGISTER");
         if(fillName != null) {
             ((EditText)findViewById(R.id.username_field)).setText(fillName);
-            ((EditText)findViewById(R.id.password_field)).requestFocus();
+            findViewById(R.id.password_field).requestFocus();
             displayMessage("Registration Successful", Color.GREEN);
         } else {
-            ((EditText)findViewById(R.id.username_field)).requestFocus();
+            findViewById(R.id.username_field).requestFocus();
         }
     }
 
@@ -68,7 +68,7 @@ public class LoginActivity extends Activity {
     }
 
     /**
-     * Display message upon invalid login or succesful registration.
+     * Display message upon invalid login or successful registration.
      *
      * @param str the message to display
      * @param color the color the message should display

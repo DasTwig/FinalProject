@@ -17,7 +17,6 @@ import com.example.twig.finalproject.R;
 import com.example.twig.dataObjects.Sale;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * The "home" of the app. Has buttons to navigate to all other activities.
@@ -26,7 +25,6 @@ import java.util.List;
  * Created by Andrew on 1/29/2015.
  */
 public class ApplicationActivity extends Activity implements AdapterView.OnItemClickListener {
-    private ListView sales;
     private ArrayList<Sale> saleList;
 
     /**
@@ -40,7 +38,7 @@ public class ApplicationActivity extends Activity implements AdapterView.OnItemC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_application);
 
-        sales = (ListView) findViewById(R.id.listView);
+        ListView sales = (ListView) findViewById(R.id.listView);
 
         SaleController saleController = SaleController.getSaleController();
 

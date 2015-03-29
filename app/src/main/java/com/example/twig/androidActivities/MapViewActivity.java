@@ -1,7 +1,6 @@
 package com.example.twig.androidActivities;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -21,8 +20,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
  * Created by Andrew on 3/25/2015.
  */
 public class MapViewActivity extends Activity {
-    GoogleMap googleMap;
-    MarkerOptions marker;
+    private GoogleMap googleMap;
 
     /**
      * Called on Activity creation. Centers the map
@@ -40,12 +38,12 @@ public class MapViewActivity extends Activity {
         String longitude = getIntent().getStringExtra("LONGITUDE");
         LatLng pos = new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude));
 
-        marker = new MarkerOptions();
+        MarkerOptions marker = new MarkerOptions();
         marker.position(pos);
         marker.draggable(false);
         googleMap.addMarker(marker);
 
-        centerOnLatLng(pos, 12.0f);
+        centerOnLatLng(pos);
     }
 
 
@@ -53,8 +51,8 @@ public class MapViewActivity extends Activity {
      * Centers the map on the specified latitude and longitude,
      * with the specified zoom level
      */
-    private void centerOnLatLng(LatLng pos, float zoomLevel) {
-        CameraUpdate movement = CameraUpdateFactory.newLatLngZoom(pos, zoomLevel);
+    private void centerOnLatLng(LatLng pos) {
+        CameraUpdate movement = CameraUpdateFactory.newLatLngZoom(pos, 12.0f);
 
         googleMap.moveCamera(movement);
     }

@@ -21,11 +21,11 @@ import com.example.twig.finalproject.R;
  */
 public class FriendDetailActivity extends Activity implements AdapterView.OnItemSelectedListener {
     private final String[] POSSIBLE_RATINGS = {"-", "1", "2", "3", "4", "5"};
-    String userBeingDisplayed;
+    private String userBeingDisplayed;
 
     /**
      * Called upon activity creation. Sets content view
-     * and reads in all persisent data, passing them to
+     * and reads in all persistent data, passing them to
      * appropriate views.
      *
      * @param savedInstanceState
@@ -50,7 +50,7 @@ public class FriendDetailActivity extends Activity implements AdapterView.OnItem
 
         email.setText(userController.getEmail(userBeingDisplayed));
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 R.layout.rating_spinner_item, POSSIBLE_RATINGS);
         rating.setAdapter(adapter);
         rating.setOnItemSelectedListener(this);

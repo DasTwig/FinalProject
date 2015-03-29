@@ -22,7 +22,7 @@ public class FriendController {
     /**
      * Make constructor private so other classes can't create one.
      */
-    protected FriendController() {
+    private FriendController() {
     }
 
     /**
@@ -31,7 +31,7 @@ public class FriendController {
      * and cannot add a friend more than once.
      *
      * @param name name of the user to add as a friend
-     * @return whether the addition was succesful
+     * @return whether the addition was successful
      */
     public boolean addFriend(String name, FriendSearchActivity activity) {
         //no adding yourself as a friend!
@@ -63,7 +63,7 @@ public class FriendController {
      * list of the current user.
      *
      * @param name name of the user to delete as a friend
-     * @return whether the deletion was succesful
+     * @return whether the deletion was successful
      */
     public boolean deleteFriend(String name, FriendSearchActivity activity) {
         for(Friend f: CurrentUser.getCurrentUser().getFriendList()) {
@@ -100,13 +100,13 @@ public class FriendController {
     }
 
     /**
-     * Gets the Friend object of the given name, assosciated with the
+     * Gets the Friend object of the given name, associated with the
      * current user.
      *
      * @param name the name of the friend
      * @return the Friend
      */
-    public Friend getFriend(String name) {
+    Friend getFriend(String name) {
         ArrayList<Friend> friendlist = CurrentUser.getCurrentUser().getFriendList();
 
         for(Friend f: friendlist) {

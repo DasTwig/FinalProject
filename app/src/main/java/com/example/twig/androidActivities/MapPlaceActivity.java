@@ -24,13 +24,13 @@ public class MapPlaceActivity extends Activity implements GoogleMap.OnMarkerDrag
     /**
      * Constant LatLng's of places that may be needed
      */
-    final LatLng ATLANTA_POS = new LatLng(33.7550, -84.3900);
+    private final LatLng ATLANTA_POS = new LatLng(33.7550, -84.3900);
     /**
      * Local variables *
      */
-    GoogleMap googleMap;
-    MarkerOptions marker;
-    double latitude, longitude;
+    private GoogleMap googleMap;
+    private double latitude;
+    private double longitude;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,13 +53,13 @@ public class MapPlaceActivity extends Activity implements GoogleMap.OnMarkerDrag
             longitude = ATLANTA_POS.longitude;
         }
 
-        marker = new MarkerOptions();
+        MarkerOptions marker = new MarkerOptions();
         marker.position(pos);
         marker.draggable(true);
         googleMap.addMarker(marker);
         googleMap.setOnMarkerDragListener(this);
 
-        centerOnLatLng(pos, 12.0f);
+        centerOnLatLng(pos);
     }
 
     /**
@@ -119,8 +119,8 @@ public class MapPlaceActivity extends Activity implements GoogleMap.OnMarkerDrag
      * Centers the map on the specified latitude and longitude,
      * with the specified zoom level
      */
-    private void centerOnLatLng(LatLng pos, float zoomLevel) {
-        CameraUpdate movement = CameraUpdateFactory.newLatLngZoom(pos, zoomLevel);
+    private void centerOnLatLng(LatLng pos) {
+        CameraUpdate movement = CameraUpdateFactory.newLatLngZoom(pos, 12.0f);
 
         googleMap.moveCamera(movement);
     }

@@ -64,7 +64,7 @@ public class CurrentUser implements Serializable {
     /**
      * Saves the current user to file.
      */
-    public static void saveCurrentUser() {
+    private static void saveCurrentUser() {
         try {
             ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filename));
             out.writeObject(current);

@@ -19,9 +19,7 @@ import com.example.twig.finalproject.R;
  * Created by Piyakorn on 3/5/2015.
  */
 public class SalesListActivity extends Activity {
-    private TextView txt;
     private Button add;
-    private ListView sales;
 
     /**
      * Called upon activity creation. Populates the list of sales,
@@ -34,8 +32,8 @@ public class SalesListActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_saleslist);
 
-        txt = (TextView) findViewById(R.id.num_sales);
-        sales = (ListView) findViewById(R.id.salesList);
+        TextView txt = (TextView) findViewById(R.id.num_sales);
+        ListView sales = (ListView) findViewById(R.id.salesList);
 
         SaleController saleController = SaleController.getSaleController();
 

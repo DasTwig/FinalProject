@@ -68,8 +68,6 @@ public class SalesReportActivity extends Activity{
                 TextView isSet = (TextView)findViewById(R.id.isLocationSet);
                 isSet.setText("\u2713"); //TICK MARK
                 isSet.setTextColor(Color.GREEN);
-            } else {
-                //map activity was cancelled -- no activity necessary
             }
         }
 
@@ -116,7 +114,7 @@ public class SalesReportActivity extends Activity{
     }
 
     /**
-     * Display message upon invalid login or succesful registration.
+     * Display message upon invalid login or successful registration.
      *
      * @param str the message to display
      * @param color the color the message should display

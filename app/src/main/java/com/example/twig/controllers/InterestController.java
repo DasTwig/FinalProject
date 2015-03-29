@@ -22,7 +22,7 @@ public class InterestController {
     /**
      * Make constructor private so other classes can't create one.
      */
-    protected InterestController() {
+    private InterestController() {
     }
 
     /**
@@ -46,7 +46,7 @@ public class InterestController {
     }
 
     /**
-     * Gets the Interest object of the given name, assosciated with the
+     * Gets the Interest object of the given name, associated with the
      * current user.
      *
      * @param name the name of the Interest
@@ -70,7 +70,7 @@ public class InterestController {
      *
      * @param name name of the item
      * @param price price of the item
-     * @return whether the interest was succesfully registered
+     * @return whether the interest was successfully registered
      */
     public boolean registerInterest(String name, String price, RegisterInterestActivity activity) {
         if(name.isEmpty() || price.isEmpty()) {

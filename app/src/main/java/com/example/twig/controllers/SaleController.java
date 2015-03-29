@@ -26,7 +26,7 @@ public class SaleController {
     /**
      * Make constructor private so other classes can't create one.
      */
-    protected SaleController() {
+    private SaleController() {
     }
 
     /**
@@ -105,7 +105,7 @@ public class SaleController {
      * @return displayed sales
      */
     public ArrayList<Sale> getDisplaySale() {
-        ArrayList<Sale> sales = new ArrayList<Sale>();
+        ArrayList<Sale> sales = new ArrayList<>();
 
         //add all sales from all friends
         for(Friend f: CurrentUser.getCurrentUser().getFriendList()) {

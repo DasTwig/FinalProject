@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.twig.controllers.AppController;
-import com.example.twig.dataObjects.CurrentUser;
 
 /**
  * Created by Andrew on 3/6/2015.

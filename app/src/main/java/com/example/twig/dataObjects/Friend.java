@@ -9,7 +9,7 @@ import java.io.Serializable;
  * Created by Piyakorn on 2/12/2015.
  */
 public class Friend implements Serializable {
-    private User user;
+    private final User user;
     private int rating;
     private int salesReported; //is this stored in friend or user? currently only use the one in user....
 

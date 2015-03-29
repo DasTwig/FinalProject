@@ -12,11 +12,11 @@ import java.util.ArrayList;
  * @author Andrew
  */
 public class User implements Serializable {
-    private String name;
+    private final String name;
     private String password;
-    private ArrayList<Friend> friendList;
-    private ArrayList<Interest> interestList;
-    private ArrayList<Sale> saleList;
+    private final ArrayList<Friend> friendList;
+    private final ArrayList<Interest> interestList;
+    private final ArrayList<Sale> saleList;
     private String email;
     private int salesReported;
 
@@ -30,9 +30,9 @@ public class User implements Serializable {
         name = n;
         email = e;
         password = p;
-        friendList = new ArrayList<Friend>();
-        interestList = new ArrayList<Interest>();
-        saleList = new ArrayList<Sale>();
+        friendList = new ArrayList<>();
+        interestList = new ArrayList<>();
+        saleList = new ArrayList<>();
         salesReported = 0;
     }
 
@@ -143,7 +143,8 @@ public class User implements Serializable {
         friendList.add(newFriend);
 
         //ensures additions are mutual
-        if(!u.getFriendList().contains(this)) {
+        Friend thisUser = new Friend(this);
+        if(!u.getFriendList().contains(thisUser)) {
             u.addFriend(this);
         }
 
@@ -176,7 +177,7 @@ public class User implements Serializable {
      * @param u - the user whose friend wrapper is to be returned
      * @return the friend wrappper for u, null if u is not a friend
      */
-    public Friend getFriendFromUser(User u) {
+    Friend getFriendFromUser(User u) {
         for(Friend f: friendList) {
             if (u.equals(f.getUser())) {
                 return f;
@@ -235,10 +236,8 @@ public class User implements Serializable {
      */
     @Override
     public boolean equals(Object obj) {
-        if (!(obj instanceof User))
-            return false;
+        return obj instanceof User && name.equalsIgnoreCase(((User) obj).getName());
 
-        return name.equalsIgnoreCase(((User) obj).getName());
     }
 
     /**
