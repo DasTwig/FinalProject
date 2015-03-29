@@ -13,7 +13,7 @@
 
     <Button
         android:layout_height="wrap_content"
-        android:text="CONFIRM"
+        android:text="@string/confirm"
         android:id="@+id/btnConfirm"
         android:layout_width="180dp"
         android:clickable="true"
@@ -23,7 +23,7 @@
 
     <Button
         android:layout_height="wrap_content"
-        android:text="CANCEL"
+        android:text="@string/cancel"
         android:id="@+id/btnCancel"
         android:layout_width="180dp"
         android:clickable="true"

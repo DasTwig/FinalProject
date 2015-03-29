@@ -6,7 +6,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back"
+        android:text="@string/add_to_friends"
         android:id="@+id/back_button"
         android:onClick="backPressed"
         android:layout_gravity= "top"
@@ -16,14 +16,13 @@
         android:id="@+id/salesList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="100dp"
-        android:layout_weight="1.10">
+        android:layout_marginTop="100dp">
     </ListView>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Sales"
+        android:text="@string/add_sales"
         android:id="@+id/add_button"
         android:onClick="addSalePressed"
         android:layout_alignParentTop="true"
@@ -34,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="You have X active sales"
+        android:text="@string/have_sales"
         android:id="@+id/num_sales"
         android:layout_below="@+id/back_button"
         android:layout_centerHorizontal="true"

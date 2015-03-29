@@ -81,7 +81,7 @@ public class FriendDetailActivity extends Activity implements AdapterView.OnItem
         if(str.equals("-")) {   //no rating selected
             friendController.setRating(userBeingDisplayed, 0);
         } else {                //rating selected
-            friendController.setRating(userBeingDisplayed, new Integer(str));
+            friendController.setRating(userBeingDisplayed, Integer.valueOf(str));
         }
     }
 

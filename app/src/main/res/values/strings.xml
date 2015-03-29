@@ -2,7 +2,47 @@
 <resources>
 
     <string name="app_name">FinalProject</string>
-    <string name="hello_world">Porter Test</string>
-    <string name="action_settings">Settings</string>
+    <string name="back">Back</string>
+    <string name="successful_login">You have successfully logged in</string>
+    <string name="name">Name</string>
+    <string name="shopping">Shopping</string>
+    <string name="sale">SALE</string>
+    <string name="login">LOGIN</string>
+    <string name="register">REGISTER</string>
+    <string name="confirm">CONFIRM</string>
+    <string name="ret">Return</string>
+    <string name="item_name">Item Name</string>
+    <string name="add_to_friends">Add to Friends</string>
+    <string name="click_on_sale">Click on sale to see location.</string>
+    <string name="email">Email</string>
+    <string name="add">ADD</string>
+    <string name="add_or_delete">Add/Delete Friends</string>
+    <string name="add_interest">Add Interest</string>
+    <string name="cancel">Cancel</string>
+    <string name="add_sales">Add Sales</string>
+    <string name="logout">Logout</string>
+    <string name="username">Username</string>
+    <string name="enter_username">Enter a username</string>
+    <string name="rating">Rating:    </string>
+    <string name="have_friends">You have X friends</string>
+    <string name="have_interests">You have X active interests</string>
+    <string name="have_sales">You have X active sales</string>
+    <string name="price">Price</string>
+    <string name="friends_list">Friends List</string>
+    <string name="password">Password</string>
+    <string name="sales_reported">Sales Reported</string>
+    <string name="email_address">Email Address</string>
+    <string name="submit">SUBMIT</string>
+    <string name="max_price">Max Item Price</string>
+    <string name="delete_friend">Delete Friend</string>
+    <string name="interests">Interests</string>
+    <string name="with">with</string>
+    <string name="my_sales">My Sales</string>
+    <string name="dollar_sign">$</string>
+    <string name="invalid_name_or_pass">Invalid username/password. Try again.</string>
+    <string name="friends">Friends!</string>
+    <string name="set_location">Set Location</string>
+    <string name="confirm_pass">Confirm Password</string>
+    <string name="empty"> </string>
 
 </resources>

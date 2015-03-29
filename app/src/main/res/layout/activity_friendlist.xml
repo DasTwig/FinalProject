@@ -6,7 +6,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back"
+        android:text="@string/back"
         android:id="@+id/btnBack"
         android:onClick="backPressed"
         android:layout_gravity= "top"
@@ -16,14 +16,13 @@
         android:id="@+id/friendList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="100dp"
-        android:layout_weight="1.10">
+        android:layout_marginTop="100dp">
     </ListView>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add/Delete Friends"
+        android:text="@string/add_or_delete"
         android:id="@+id/btnAddOrDelete"
         android:onClick="addFriendPressed"
         android:layout_alignParentTop="true"
@@ -34,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="You have X friends"
+        android:text="@string/have_friends"
         android:id="@+id/txtNumFriends"
         android:layout_below="@+id/btnBack"
         android:layout_centerHorizontal="true"

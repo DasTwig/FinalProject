@@ -8,50 +8,50 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Name"
+        android:text="@string/name"
         android:id="@+id/txtName"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="59dp"
-        android:textSize="40dp" />
+        android:textSize="40sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Email"
+        android:text="@string/email"
         android:id="@+id/txtEmail"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/txtName"
         android:layout_marginTop="40dp"
-        android:textSize="30dp" />
+        android:textSize="30sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Rating:    "
+        android:text="@string/rating"
         android:id="@+id/txtRating"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/txtEmail"
         android:layout_marginTop="40dp"
-        android:textSize="30dp" />
+        android:textSize="30sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Sales Reported"
+        android:text="@string/sales_reported"
         android:id="@+id/txtSalesReported"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/txtRating"
         android:layout_marginTop="40dp"
-        android:textSize="30dp" />
+        android:textSize="30sp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back"
+        android:text="@string/back"
         android:id="@+id/btnBack"
         android:onClick="backPressed"
         android:layout_below="@+id/txtSalesReported"

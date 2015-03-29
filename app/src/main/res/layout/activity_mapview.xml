@@ -13,7 +13,7 @@
 
     <Button
         android:layout_height="wrap_content"
-        android:text="RETURN"
+        android:text="@string/ret"
         android:id="@+id/btnReturn"
         android:layout_width="match_parent"
         android:clickable="true"

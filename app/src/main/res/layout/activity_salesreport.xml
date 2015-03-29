@@ -11,10 +11,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="SALE"
+        android:text="@string/sale"
         android:id="@+id/SaleText"
         android:layout_marginTop="67dp"
-        android:textSize="60dp"
+        android:textSize="60sp"
         android:textColor="#ff9fff80"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -26,7 +26,7 @@
         android:ems="10"
         android:id="@+id/sale_name_field"
         android:width="250dp"
-        android:hint="Name"
+        android:hint="@string/name"
         android:layout_below="@+id/SaleText"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"/>
@@ -38,7 +38,7 @@
         android:ems="10"
         android:id="@+id/sale_price_field"
         android:width="250dp"
-        android:hint="Price"
+        android:hint="@string/price"
         android:clickable="true"
         android:layout_below="@+id/sale_name_field"
         android:layout_centerHorizontal="true"/>
@@ -46,7 +46,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SUBMIT"
+        android:text="@string/submit"
         android:id="@+id/submitButton"
         android:width="120dp"
         android:clickable="true"
@@ -58,7 +58,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="BACK"
+        android:text="@string/back"
         android:id="@+id/backButton"
         android:width="120dp"
         android:onClick="backPressed"
@@ -75,7 +75,7 @@
         android:layout_below="@+id/sale_price_field"
         android:layout_alignLeft="@+id/sale_price_field"
         android:layout_marginTop="10dp"
-        android:text="Set Location"
+        android:text="@string/set_location"
         android:onClick="setLocationPressed"/>
 
     <TextView
@@ -83,7 +83,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text=""
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textColor="#FF0000"
         android:id="@+id/isLocationSet"
         android:layout_toRightOf="@id/sale_location_button"
@@ -95,7 +95,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Filler Text"
+        android:text="@string/empty"
         android:id="@+id/message"
         android:layout_marginTop="35dp"
         android:layout_marginBottom="20dp"
@@ -107,8 +107,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textSize="20dp"
-        android:text="$"
+        android:textSize="20sp"
+        android:text="@string/dollar_sign"
         android:layout_toLeftOf="@id/sale_price_field"
         android:layout_alignTop="@id/sale_price_field"
         />
