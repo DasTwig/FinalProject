@@ -17,8 +17,6 @@
         android:textColor="#ff9fff80"
         android:textSize="60sp"
         android:textAlignment="center"
-        android:password="false"
-        android:phoneNumber="false"
         style="@style/Base.TextAppearance.AppCompat.Inverse"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
@@ -64,8 +62,6 @@
         android:textColor="#ff9fff80"
         android:textSize="30sp"
         android:textAlignment="center"
-        android:password="false"
-        android:phoneNumber="false"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true" />
 
@@ -80,8 +76,6 @@
         android:textColor="#ff9fff80"
         android:textSize="60sp"
         android:textAlignment="center"
-        android:password="false"
-        android:phoneNumber="false"
         android:layout_below="@+id/textView2"
         android:layout_centerHorizontal="true" />
 
