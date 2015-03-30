@@ -20,7 +20,7 @@ import com.example.twig.finalproject.R;
  *
  * Created by Andrew on 3/22/2015.
  */
-public class MapPlaceActivity extends Activity implements GoogleMap.OnMarkerDragListener {
+public class MapPlaceActivity extends Activity { // implements GoogleMap.OnMarkerDragListener {
     /**
      * Constant LatLng's of places that may be needed
      */
@@ -36,7 +36,7 @@ public class MapPlaceActivity extends Activity implements GoogleMap.OnMarkerDrag
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mapplace);
-        createMapView();
+//        createMapView();
 
         String strLat = getIntent().getStringExtra("LATITUDE");
         String strLong = getIntent().getStringExtra("LONGITUDE");
@@ -53,41 +53,41 @@ public class MapPlaceActivity extends Activity implements GoogleMap.OnMarkerDrag
             longitude = ATLANTA_POS.longitude;
         }
 
-        marker = new MarkerOptions();
-        marker.position(pos);
-        marker.draggable(true);
-        googleMap.addMarker(marker);
-        googleMap.setOnMarkerDragListener(this);
-
-        centerOnLatLng(pos, 12.0f);
+//        marker = new MarkerOptions();
+//        marker.position(pos);
+//        marker.draggable(true);
+//        googleMap.addMarker(marker);
+//        googleMap.setOnMarkerDragListener(this);
+//
+//        centerOnLatLng(pos, 12.0f);
     }
 
     /**
      * Initialises the mapview
      */
-    private void createMapView() {
-        /**
-         * Catch the null pointer exception that
-         * may be thrown when initialising the map
-         */
-        try {
-            if (null == googleMap) {
-                googleMap = ((MapFragment) getFragmentManager().findFragmentById(
-                        R.id.mapView)).getMap();
-
-                /**
-                 * If the map is still null after attempted initialisation,
-                 * show an error to the user
-                 */
-                if (null == googleMap) {
-                    Toast.makeText(getApplicationContext(),
-                            "Error creating map", Toast.LENGTH_SHORT).show();
-                }
-            }
-        } catch (NullPointerException exception) {
-            Log.e("mapApp", exception.toString());
-        }
-    }
+//    private void createMapView() {
+//        /**
+//         * Catch the null pointer exception that
+//         * may be thrown when initialising the map
+//         */
+//        try {
+//            if (null == googleMap) {
+//                googleMap = ((MapFragment) getFragmentManager().findFragmentById(
+//                        R.id.mapView)).getMap();
+//
+//                /**
+//                 * If the map is still null after attempted initialisation,
+//                 * show an error to the user
+//                 */
+//                if (null == googleMap) {
+//                    Toast.makeText(getApplicationContext(),
+//                            "Error creating map", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        } catch (NullPointerException exception) {
+//            Log.e("mapApp", exception.toString());
+//        }
+//    }
 
     /**
      * Called when confirm is pressed. Goes back to Sale Report activity that launched it
@@ -96,8 +96,8 @@ public class MapPlaceActivity extends Activity implements GoogleMap.OnMarkerDrag
      */
     public void confirmPressed(View view) {
         Intent returnIntent = new Intent();
-        returnIntent.putExtra("LATITUDE", "" + latitude);
-        returnIntent.putExtra("LONGITUDE", "" + longitude);
+        returnIntent.putExtra("LATITUDE", "" + ATLANTA_POS.latitude);
+        returnIntent.putExtra("LONGITUDE", "" + ATLANTA_POS.longitude);
         setResult(RESULT_OK, returnIntent);
 
         finish();
@@ -119,26 +119,26 @@ public class MapPlaceActivity extends Activity implements GoogleMap.OnMarkerDrag
      * Centers the map on the specified latitude and longitude,
      * with the specified zoom level
      */
-    private void centerOnLatLng(LatLng pos, float zoomLevel) {
-        CameraUpdate movement = CameraUpdateFactory.newLatLngZoom(pos, zoomLevel);
-
-        googleMap.moveCamera(movement);
-    }
-
-    @Override
-    public void onMarkerDragStart(Marker marker) {
-
-    }
-
-    @Override
-    public void onMarkerDrag(Marker marker) {
-
-    }
-
-    @Override
-    public void onMarkerDragEnd(Marker m) {
-        latitude = m.getPosition().latitude;
-        longitude = m.getPosition().longitude;
-        googleMap.animateCamera(CameraUpdateFactory.newLatLng(m.getPosition()));
-    }
+//    private void centerOnLatLng(LatLng pos, float zoomLevel) {
+//        CameraUpdate movement = CameraUpdateFactory.newLatLngZoom(pos, zoomLevel);
+//
+//        googleMap.moveCamera(movement);
+//    }
+//
+//    @Override
+//    public void onMarkerDragStart(Marker marker) {
+//
+//    }
+//
+//    @Override
+//    public void onMarkerDrag(Marker marker) {
+//
+//    }
+//
+//    @Override
+//    public void onMarkerDragEnd(Marker m) {
+//        latitude = m.getPosition().latitude;
+//        longitude = m.getPosition().longitude;
+//        googleMap.animateCamera(CameraUpdateFactory.newLatLng(m.getPosition()));
+//    }
 }

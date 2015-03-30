@@ -34,18 +34,18 @@ public class MapViewActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mapview);
-        createMapView();
+//        createMapView();
 
         String latitude = getIntent().getStringExtra("LATITUDE");
         String longitude = getIntent().getStringExtra("LONGITUDE");
         LatLng pos = new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude));
 
-        marker = new MarkerOptions();
-        marker.position(pos);
-        marker.draggable(false);
-        googleMap.addMarker(marker);
-
-        centerOnLatLng(pos, 12.0f);
+//        marker = new MarkerOptions();
+//        marker.position(pos);
+//        marker.draggable(false);
+//        googleMap.addMarker(marker);
+//
+//        centerOnLatLng(pos, 12.0f);
     }
 
 
@@ -53,11 +53,11 @@ public class MapViewActivity extends Activity {
      * Centers the map on the specified latitude and longitude,
      * with the specified zoom level
      */
-    private void centerOnLatLng(LatLng pos, float zoomLevel) {
-        CameraUpdate movement = CameraUpdateFactory.newLatLngZoom(pos, zoomLevel);
-
-        googleMap.moveCamera(movement);
-    }
+//    private void centerOnLatLng(LatLng pos, float zoomLevel) {
+//        CameraUpdate movement = CameraUpdateFactory.newLatLngZoom(pos, zoomLevel);
+//
+//        googleMap.moveCamera(movement);
+//    }
 
     /**
      * Called when Return is pressed. Brings user back to the application activity
@@ -72,27 +72,27 @@ public class MapViewActivity extends Activity {
     /**
      * Initialises the mapview
      */
-    private void createMapView() {
-        /**
-         * Catch the null pointer exception that
-         * may be thrown when initialising the map
-         */
-        try {
-            if (null == googleMap) {
-                googleMap = ((MapFragment) getFragmentManager().findFragmentById(
-                        R.id.mapView)).getMap();
-
-                /**
-                 * If the map is still null after attempted initialisation,
-                 * show an error to the user
-                 */
-                if (null == googleMap) {
-                    Toast.makeText(getApplicationContext(),
-                            "Error creating map", Toast.LENGTH_SHORT).show();
-                }
-            }
-        } catch (NullPointerException exception) {
-            Log.e("mapApp", exception.toString());
-        }
-    }
+//    private void createMapView() {
+//        /**
+//         * Catch the null pointer exception that
+//         * may be thrown when initialising the map
+//         */
+//        try {
+//            if (null == googleMap) {
+//                googleMap = ((MapFragment) getFragmentManager().findFragmentById(
+//                        R.id.mapView)).getMap();
+//
+//                /**
+//                 * If the map is still null after attempted initialisation,
+//                 * show an error to the user
+//                 */
+//                if (null == googleMap) {
+//                    Toast.makeText(getApplicationContext(),
+//                            "Error creating map", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        } catch (NullPointerException exception) {
+//            Log.e("mapApp", exception.toString());
+//        }
+//    }
 }
