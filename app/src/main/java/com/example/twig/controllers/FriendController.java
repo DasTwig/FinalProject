@@ -33,11 +33,11 @@ public class FriendController {
      * @param name name of the user to add as a friend
      * @return whether the addition was successful
      */
-    public boolean addFriend(String name, FriendSearchActivity activity) {
+    public void addFriend(String name, FriendSearchActivity activity) {
         //no adding yourself as a friend!
         if(name.equalsIgnoreCase(CurrentUser.getCurrentUser().getName())) {
             activity.displayMessage("You cannot add yourself as a friend.", Color.RED);
-            return false;
+            return;
         }
 
         for(User u: UserList.getUserList()) {
@@ -50,12 +50,11 @@ public class FriendController {
                     activity.displayMessage("You are already friends with " + u.getName() + ".", Color.RED);
                 }
 
-                return success;
+                return;
             }
         }
 
         activity.displayMessage("User not found.", Color.RED);
-        return false;
     }
 
     /**
@@ -65,18 +64,17 @@ public class FriendController {
      * @param name name of the user to delete as a friend
      * @return whether the deletion was successful
      */
-    public boolean deleteFriend(String name, FriendSearchActivity activity) {
+    public void deleteFriend(String name, FriendSearchActivity activity) {
         for(Friend f: CurrentUser.getCurrentUser().getFriendList()) {
             if (name.equalsIgnoreCase(f.getUser().getName())) {
                 CurrentUser.getCurrentUser().removeFriend(f.getUser());
                 activity.displayMessage(f.getUser().getName() + " removed as a friend.", Color.GREEN);
-                return true;
+                return;
             }
         }
 
 
         activity.displayMessage(name + " is not on your friend's list.", Color.RED);
-        return false;
     }
 
     /**

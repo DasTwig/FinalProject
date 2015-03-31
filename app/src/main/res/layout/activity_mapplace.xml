@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="#838383">
+    android:layout_width="match_parent" android:layout_height="match_parent">
 
     <fragment
         android:id="@+id/mapView"
@@ -19,7 +18,8 @@
         android:clickable="true"
         android:onClick="confirmPressed"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"/>
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
 
     <Button
         android:layout_height="wrap_content"
@@ -29,6 +29,7 @@
         android:clickable="true"
         android:onClick="cancelPressed"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"/>
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
 
 </RelativeLayout>

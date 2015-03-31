@@ -43,7 +43,7 @@ public class ApplicationActivity extends Activity implements AdapterView.OnItemC
         SaleController saleController = SaleController.getSaleController();
 
         saleList = saleController.getDisplaySale();
-        ArrayAdapter<Sale> adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,
+        ArrayAdapter<Sale> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,
                 saleList);
         sales.setAdapter(adapter);
         sales.setOnItemClickListener(this);
@@ -91,16 +91,6 @@ public class ApplicationActivity extends Activity implements AdapterView.OnItemC
     public void interestsPressed(View view) {
         Intent intent = new Intent(this, InterestListActivity.class);
         startActivity(intent);
-    }
-
-    /**
-     * Method called when the notification button is pressed.
-     *
-     * @param view - the notification button
-     */
-    public void notificationButtonPressed(View view) {
-        //TODO: add notificationActivity
-        //or not? are we even using notifications?
     }
 
     /**

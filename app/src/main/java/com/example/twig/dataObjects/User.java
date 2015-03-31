@@ -159,14 +159,12 @@ public class User implements Serializable {
      * @param u - the user to remove from the friend list
      * @return whether or not a removal occurred
      */
-    public boolean removeFriend(User u) {
+    public void removeFriend(User u) {
         if(friendList.remove(getFriendFromUser(u))) {
             u.removeFriend(this);
             UserList.saveUserList();
-            return true;
         }
 
-        return false;
     }
 
     /**

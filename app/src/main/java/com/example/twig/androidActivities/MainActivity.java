@@ -7,6 +7,8 @@ import android.os.Bundle;
 import com.example.twig.controllers.AppController;
 
 /**
+ * The main activity for the app. Starts the application.
+ *
  * Created by Andrew on 3/6/2015.
  */
 public class MainActivity extends Activity {

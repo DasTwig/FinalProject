@@ -11,7 +11,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.twig.controllers.FriendController;
-import com.example.twig.dataObjects.User;
 import com.example.twig.finalproject.R;
 
 /**
@@ -38,7 +37,7 @@ public class FriendListActivity extends Activity implements OnItemClickListener 
 
         FriendController friendController = FriendController.getFriendController();
 
-        ArrayAdapter<User> adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,
+        ArrayAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,
                 friendController.getFriendList());
         friends.setAdapter(adapter);
         friends.setOnItemClickListener(this);

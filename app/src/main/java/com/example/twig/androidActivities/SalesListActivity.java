@@ -37,7 +37,7 @@ public class SalesListActivity extends Activity {
 
         SaleController saleController = SaleController.getSaleController();
 
-        ArrayAdapter<Sale> adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,
+        ArrayAdapter<Sale> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,
                 saleController.getSaleList());
         sales.setAdapter(adapter);
 

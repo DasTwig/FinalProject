@@ -35,7 +35,7 @@ public class InterestListActivity extends Activity{
 
         InterestController interestController = InterestController.getInterestController();
 
-        ArrayAdapter<Interest> adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,
+        ArrayAdapter<Interest> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,
                 interestController.getInterestList());
         interests.setAdapter(adapter);
 
