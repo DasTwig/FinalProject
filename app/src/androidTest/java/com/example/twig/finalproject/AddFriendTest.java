@@ -40,8 +40,6 @@ public class AddFriendTest extends ApplicationTestCase<Application> {
         assertFalse(friendInList(u1.getFriendList(), u4));
 
 
-
-
         /*********attempt adding a duplicate friend********/
         u1.addFriend(u2);
 
