@@ -19,7 +19,7 @@ public class RegisterInterestActivity extends Activity{
     /**
      * Called upon activity creation.
      *
-     * @param savedInstanceState
+     * @param savedInstanceState The savedInstanceState for super
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {

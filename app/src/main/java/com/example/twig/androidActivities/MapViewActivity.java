@@ -26,7 +26,7 @@ public class MapViewActivity extends Activity {
      * Called on Activity creation. Centers the map
      * on the specified latitude and longitude.
      *
-     * @param savedInstanceState
+     * @param savedInstanceState The savedInstanceState for super
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {

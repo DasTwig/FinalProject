@@ -41,7 +41,7 @@ public class AppController {
      * Called upon app initialization. Sets the filename for the UserList class
      * and loads any existing data from it.
      *
-     * @param activity
+     * @param activity The main activity
      */
     public void loadApplicationData(MainActivity activity) {
         //initialize the user list to write to / read from the correct file

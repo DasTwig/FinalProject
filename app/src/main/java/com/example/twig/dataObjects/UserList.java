@@ -20,8 +20,8 @@ public class UserList implements Serializable {
     private static String filename;
 
     /**
-     * prevents other objects from calling the constructor.
-     */
+    * prevents other objects from calling the constructor.
+    */
     protected UserList() {}
 
     /**
@@ -77,16 +77,18 @@ public class UserList implements Serializable {
         filename = str;
     }
 
-    /**
-     * Get the name of the file that this class saves to/loads from.
-     */
-    public static String getSaveFilename() {
-        return filename;
-    }
+// --Commented out by Inspection START (4/2/2015 2:20 PM):
+//    /**
+//     * Get the name of the file that this class saves to/loads from.
+//     */
+//    public static String getSaveFilename() {
+//        return filename;
+//    }
+// --Commented out by Inspection STOP (4/2/2015 2:20 PM)
 
     /**
      * Get the user list.
-     * @return
+     * @return The userlist
      */
     public static ArrayList<User> getUserList() {
         return userlist;

@@ -23,7 +23,7 @@ public class InterestListActivity extends Activity{
      * Called upon activity creation. Sets up list/adapter, and
      * displays number of current interests.
      *
-     * @param savedInstanceState
+     * @param savedInstanceState The savedInstanceState for super
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {

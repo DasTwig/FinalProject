@@ -31,7 +31,6 @@ public class FriendController {
      * and cannot add a friend more than once.
      *
      * @param name name of the user to add as a friend
-     * @return whether the addition was successful
      */
     public void addFriend(String name, FriendSearchActivity activity) {
         //no adding yourself as a friend!
@@ -62,7 +61,6 @@ public class FriendController {
      * list of the current user.
      *
      * @param name name of the user to delete as a friend
-     * @return whether the deletion was successful
      */
     public void deleteFriend(String name, FriendSearchActivity activity) {
         for(Friend f: CurrentUser.getCurrentUser().getFriendList()) {
@@ -150,22 +148,24 @@ public class FriendController {
         f.setRating(rating);
     }
 
-    /**
-     * Returns the num of sales reported by the given user to
-     * the current user.
-     *
-     * @param name friend whose # sales is being returned
-     * @return the num of sales reported by this user to the current user
-     */
-    public int getSalesReported(String name) {
-        Friend f;
-
-        if((f = getFriend(name)) == null) {
-            return 0;
-        }
-
-        return f.getSalesReported();
-    }
+// --Commented out by Inspection START (4/2/2015 2:20 PM):
+//    /**
+//     * Returns the num of sales reported by the given user to
+//     * the current user.
+//     *
+//     * @param name friend whose # sales is being returned
+//     * @return the num of sales reported by this user to the current user
+//     */
+//    public int getSalesReported(String name) {
+//        Friend f;
+//
+//        if((f = getFriend(name)) == null) {
+//            return 0;
+//        }
+//
+//        return f.getSalesReported();
+//    }
+// --Commented out by Inspection STOP (4/2/2015 2:20 PM)
 
     /**
      * Access point for other classes to get the singleton.

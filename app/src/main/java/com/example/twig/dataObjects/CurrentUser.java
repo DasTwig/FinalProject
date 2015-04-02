@@ -1,8 +1,7 @@
 package com.example.twig.dataObjects;
 
-import java.io.FileInputStream;
+
 import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
@@ -48,18 +47,20 @@ public class CurrentUser implements Serializable {
         setCurrentUser(null);
     }
 
-    /**
-     * Loads the current user from file.
-     */
-    public static void loadCurrentUser() {
-        try {
-            ObjectInputStream in = new ObjectInputStream(new FileInputStream(filename));
-            current = (User)in.readObject();
-            in.close();
-        } catch(Exception e) {
-            System.out.println("Error reading in data: " + e.getMessage());
-        }
-    }
+// --Commented out by Inspection START (4/2/2015 2:19 PM):
+//    /**
+//     * Loads the current user from file.
+//     */
+//    public static void loadCurrentUser() {
+//        try {
+//            ObjectInputStream in = new ObjectInputStream(new FileInputStream(filename));
+//            current = (User)in.readObject();
+//            in.close();
+//        } catch(Exception e) {
+//            System.out.println("Error reading in data: " + e.getMessage());
+//        }
+//    }
+// --Commented out by Inspection STOP (4/2/2015 2:19 PM)
 
     /**
      * Saves the current user to file.
@@ -74,20 +75,24 @@ public class CurrentUser implements Serializable {
         }
     }
 
-    /**
-     * Set the name of the file that this class should save to/load from.
-     * Should be set during app initialisation.
-     *
-     * @param str - the filename to save to
-     */
-    public static void setSaveFilename(String str) {
-        filename = str;
-    }
+// --Commented out by Inspection START (4/2/2015 2:19 PM):
+//    /**
+//     * Set the name of the file that this class should save to/load from.
+//     * Should be set during app initialisation.
+//     *
+//     * @param str - the filename to save to
+//     */
+//    public static void setSaveFilename(String str) {
+//        filename = str;
+//    }
+// --Commented out by Inspection STOP (4/2/2015 2:19 PM)
 
-    /**
-     * Get the name of the file that this class saves to/loads from.
-     */
-    public static String getSaveFilename() {
-        return filename;
-    }
+// --Commented out by Inspection START (4/2/2015 2:19 PM):
+//    /**
+//     * Get the name of the file that this class saves to/loads from.
+//     */
+//    public static String getSaveFilename() {
+//        return filename;
+//    }
+// --Commented out by Inspection STOP (4/2/2015 2:19 PM)
 }

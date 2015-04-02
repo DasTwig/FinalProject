@@ -92,7 +92,7 @@ public class MapPlaceActivity extends Activity implements GoogleMap.OnMarkerDrag
     /**
      * Called when confirm is pressed. Goes back to Sale Report activity that launched it
      * and passes it the lat and long strings.
-     * @param view
+     * @param view Current view
      */
     public void confirmPressed(View view) {
         Intent returnIntent = new Intent();
@@ -106,7 +106,7 @@ public class MapPlaceActivity extends Activity implements GoogleMap.OnMarkerDrag
     /**
      * Called when cancel is pressed. Goes back to Sale Report activity that launched it,
      * nothing gets changed.
-     * @param view
+     * @param view Current view
      */
     public void cancelPressed(View view) {
         Intent returnIntent = new Intent();

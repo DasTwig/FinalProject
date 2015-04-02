@@ -10,7 +10,7 @@ import java.text.DecimalFormat;
  * Created by Piyakorn on 2/24/2015.
  */
 public class Interest implements Serializable {
-    private String name;
+    private final String name;
     private double price;
 
     /**
@@ -30,13 +30,15 @@ public class Interest implements Serializable {
     public String getName() {
         return name;
     }
-    /**
-     * Setter for interest item name
-     * @param n  - new name for item
-     */
-    public void setName(String n) {
-        name = n;
-    }
+// --Commented out by Inspection START (4/2/2015 2:20 PM):
+//    /**
+//     * Setter for interest item name
+//     * @param n  - new name for item
+//     */
+//    public void setName(String n) {
+//        name = n;
+//    }
+// --Commented out by Inspection STOP (4/2/2015 2:20 PM)
     /**
      * Getter for price.
      * @return the price

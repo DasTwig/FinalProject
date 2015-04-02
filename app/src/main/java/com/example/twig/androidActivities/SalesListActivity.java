@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -19,13 +18,13 @@ import com.example.twig.finalproject.R;
  * Created by Piyakorn on 3/5/2015.
  */
 public class SalesListActivity extends Activity {
-    private Button add;
+    // --Commented out by Inspection (4/2/2015 2:20 PM):private Button add;
 
     /**
      * Called upon activity creation. Populates the list of sales,
      * and displays how many sales you have reported.
      *
-     * @param savedInstanceState
+     * @param savedInstanceState The savedInstanceState for super
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {

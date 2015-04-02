@@ -13,11 +13,11 @@ import java.util.ArrayList;
  */
 public class User implements Serializable {
     private final String name;
-    private String password;
+    private final String password;
     private final ArrayList<Friend> friendList;
     private final ArrayList<Interest> interestList;
     private final ArrayList<Sale> saleList;
-    private String email;
+    private final String email;
     private int salesReported;
 
     /**
@@ -53,15 +53,17 @@ public class User implements Serializable {
         return password;
     }
 
-    /**
-     * Setter to change the user's password.
-     *
-     * @param newPass - the new password
-     */
-    public void setPassword(String newPass) {
-        password = newPass;
-        UserList.saveUserList();
-    }
+// --Commented out by Inspection START (4/2/2015 2:20 PM):
+//    /**
+//     * Setter to change the user's password.
+//     *
+//     * @param newPass - the new password
+//     */
+//    public void setPassword(String newPass) {
+//        password = newPass;
+//        UserList.saveUserList();
+//    }
+// --Commented out by Inspection STOP (4/2/2015 2:20 PM)
 
     /**
      * Getter for the user's email.
@@ -70,15 +72,17 @@ public class User implements Serializable {
      */
     public String getEmail() { return email; }
 
-    /**
-     * Setter to change the user's email.
-     *
-     * @param newEmail - the new email
-     */
-    public void setEmail(String newEmail) {
-        email = newEmail;
-        UserList.saveUserList();
-    }
+// --Commented out by Inspection START (4/2/2015 2:20 PM):
+//    /**
+//     * Setter to change the user's email.
+//     *
+//     * @param newEmail - the new email
+//     */
+//    public void setEmail(String newEmail) {
+//        email = newEmail;
+//        UserList.saveUserList();
+//    }
+// --Commented out by Inspection STOP (4/2/2015 2:20 PM)
 
     /**
      * Getter for the number of sales reported.
@@ -157,7 +161,6 @@ public class User implements Serializable {
      * friend list.
      *
      * @param u - the user to remove from the friend list
-     * @return whether or not a removal occurred
      */
     public void removeFriend(User u) {
         if(friendList.remove(getFriendFromUser(u))) {

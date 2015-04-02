@@ -20,7 +20,7 @@ public class MainActivity extends Activity {
      *
      * If user logged off, it launches to a welcome screen.
      *
-     * @param savedInstanceState
+     * @param savedInstanceState The savedInstanceState for super
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {

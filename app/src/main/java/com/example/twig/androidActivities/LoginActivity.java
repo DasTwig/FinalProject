@@ -22,7 +22,7 @@ public class LoginActivity extends Activity {
      * successful registration, then gives the user an acknowledgement of
      * the registration success.
      *
-     * @param savedInstanceState
+     * @param savedInstanceState The savedInstanceState for super
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {

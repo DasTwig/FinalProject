@@ -45,24 +45,26 @@ public class InterestController {
         return CurrentUser.getCurrentUser().getInterestList().size();
     }
 
-    /**
-     * Gets the Interest object of the given name, associated with the
-     * current user.
-     *
-     * @param name the name of the Interest
-     * @return the Interest
-     */
-    public Interest getInterest(String name) {
-        ArrayList<Interest> interestList = CurrentUser.getCurrentUser().getInterestList();
-
-        for(Interest interest: interestList) {
-            if(interest.getName().equalsIgnoreCase(name)) {
-                return interest;
-            }
-        }
-
-        return null;
-    }
+// --Commented out by Inspection START (4/2/2015 2:20 PM):
+//    /**
+//     * Gets the Interest object of the given name, associated with the
+//     * current user.
+//     *
+//     * @param name the name of the Interest
+//     * @return the Interest
+//     */
+//    public Interest getInterest(String name) {
+//        ArrayList<Interest> interestList = CurrentUser.getCurrentUser().getInterestList();
+//
+//        for(Interest interest: interestList) {
+//            if(interest.getName().equalsIgnoreCase(name)) {
+//                return interest;
+//            }
+//        }
+//
+//        return null;
+//    }
+// --Commented out by Inspection STOP (4/2/2015 2:20 PM)
 
     /**
      * Constructs an interest from the information given, and adds it to the current user's

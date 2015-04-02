@@ -31,7 +31,7 @@ public class ApplicationActivity extends Activity implements AdapterView.OnItemC
      * Called on creation. Displays name of user who is logged in, as well
      * as any sales reported by their friends that match one of their interests.
      *
-     * @param savedInstanceState
+     * @param savedInstanceState The savedInstanceState for super
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,13 +65,15 @@ public class ApplicationActivity extends Activity implements AdapterView.OnItemC
         startActivity(intent);
     }
 
-    /**
-     * Starts the main activity.
-     */
-    public void startMainActivity() {
-        Intent intent = new Intent(this, WelcomeActivity.class);
-        startActivity(intent);
-    }
+// --Commented out by Inspection START (4/2/2015 2:14 PM):
+//    /**
+//     * Starts the main activity.
+//     */
+//    public void startMainActivity() {
+//        Intent intent = new Intent(this, WelcomeActivity.class);
+//        startActivity(intent);
+//    }
+// --Commented out by Inspection STOP (4/2/2015 2:14 PM)
 
     /**
      * Method called when the friend button is pressed.
@@ -106,10 +108,10 @@ public class ApplicationActivity extends Activity implements AdapterView.OnItemC
     /**
      * When sale is clicked, launch MapViewActivity to show location of the sale.
      *
-     * @param parent
-     * @param view
-     * @param position
-     * @param id
+     * @param parent Parent view
+     * @param view Current view
+     * @param position Item position
+     * @param id ID
      */
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

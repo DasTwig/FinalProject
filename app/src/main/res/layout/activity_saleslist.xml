@@ -5,7 +5,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/add_to_friends"
+        android:text="@string/back"
         android:id="@+id/back_button"
         android:onClick="backPressed"
         android:layout_gravity= "top"

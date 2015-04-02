@@ -25,7 +25,7 @@ public class FriendListActivity extends Activity implements OnItemClickListener 
      * Called upon activity creation. Creates the list/adapter,
      * and adds an onItemClickedListener() to register clicks.
      *
-     * @param savedInstanceState
+     * @param savedInstanceState The savedInstanceState for super
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,10 +72,10 @@ public class FriendListActivity extends Activity implements OnItemClickListener 
      * Called when a friend is clicked on. Brings user to that friend's
      * FriendDetailActivity
      *
-     * @param parent
-     * @param view
-     * @param position
-     * @param id
+     * @param parent Parent adapter view
+     * @param view Current view
+     * @param position Item position
+     * @param id ID
      */
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

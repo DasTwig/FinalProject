@@ -25,7 +25,7 @@ public class SalesReportActivity extends Activity{
      * from map activity, there will be intent extras that
      * get stored in the temporary variables latitude and longitude.
      *
-     * @param savedInstanceState
+     * @param savedInstanceState The savedInstanceState for super
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {

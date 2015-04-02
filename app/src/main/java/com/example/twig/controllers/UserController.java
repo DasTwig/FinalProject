@@ -114,10 +114,12 @@ public class UserController {
         return CurrentUser.getCurrentUser().getName();
     }
 
-    /**
-     * Returns the email of the current User.
-     */
-    public String getCurrentEmail() {
-        return CurrentUser.getCurrentUser().getEmail();
-    }
+// --Commented out by Inspection START (4/2/2015 2:20 PM):
+//    /**
+//     * Returns the email of the current User.
+//     */
+//    public String getCurrentEmail() {
+//        return CurrentUser.getCurrentUser().getEmail();
+//    }
+// --Commented out by Inspection STOP (4/2/2015 2:20 PM)
 }

@@ -28,7 +28,7 @@ public class FriendDetailActivity extends Activity implements AdapterView.OnItem
      * and reads in all persistent data, passing them to
      * appropriate views.
      *
-     * @param savedInstanceState
+     * @param savedInstanceState The savedInstanceState for super
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {

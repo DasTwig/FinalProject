@@ -12,14 +12,14 @@ import java.text.DecimalFormat;
  * Created by Piyakorn on 3/5/2015.
  */
 public class Sale implements Serializable {
-    private String name;
-    private double price;
+    private final String name;
+    private final double price;
 
     //store as 2 doubles instead of as a LatLng since LatLng isn't serializable
     //however, getters and setters use LatLng, so from the client's perspective,
     //locations are stored as LatLng's
-    private double latitude;
-    private double longitude;
+    private final double latitude;
+    private final double longitude;
 
     /**
      * Constructor for a Sale object.
@@ -40,13 +40,15 @@ public class Sale implements Serializable {
     public String getName() {
         return name;
     }
-    /**
-     * Setter for sale item name
-     * @param n  - new name for item
-     */
-    public void setName(String n) {
-        name = n;
-    }
+// --Commented out by Inspection START (4/2/2015 2:20 PM):
+//    /**
+//     * Setter for sale item name
+//     * @param n  - new name for item
+//     */
+//    public void setName(String n) {
+//        name = n;
+//    }
+// --Commented out by Inspection STOP (4/2/2015 2:20 PM)
     /**
      * Getter for price.
      * @return the price
@@ -54,13 +56,15 @@ public class Sale implements Serializable {
     public double getPrice() {
         return price;
     }
-    /**
-     * Setter for sale item price
-     * @param p  - new price
-     */
-    public void setPrice(double p) {
-        price = p;
-    }
+// --Commented out by Inspection START (4/2/2015 2:20 PM):
+//    /**
+//     * Setter for sale item price
+//     * @param p  - new price
+//     */
+//    public void setPrice(double p) {
+//        price = p;
+//    }
+// --Commented out by Inspection STOP (4/2/2015 2:20 PM)
     /**
      * Getter for location.
      * @return the location
@@ -68,18 +72,20 @@ public class Sale implements Serializable {
     public LatLng getLocation() {
         return new LatLng(latitude, longitude);
     }
-    /**
-     * Setter for sale item location
-     * @param l  - new location
-     */
-    public void setLocation(LatLng l) {
-        latitude = l.latitude;
-        longitude = l.longitude;
-    }
+// --Commented out by Inspection START (4/2/2015 2:20 PM):
+//    /**
+//     * Setter for sale item location
+//     * @param l  - new location
+//     */
+//    public void setLocation(LatLng l) {
+//        latitude = l.latitude;
+//        longitude = l.longitude;
+//    }
+// --Commented out by Inspection STOP (4/2/2015 2:20 PM)
 
     /**
      * toString for a sale. Includes name, price, and location.
-     * @return
+     * @return A sale in string format
      */
     public String toString() {
         return (name + ": $" + new DecimalFormat("0.00").format(price));
