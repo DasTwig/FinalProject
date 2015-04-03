@@ -1,10 +1,13 @@
 package com.example.twig.dataObjects;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
- * Class containing the information for a user.
+ * Class containing the information for a user. Nearly all of the data contained
+ * in the app is tied to the User object that the data pertains to.
  *
  * @author Andrew
  */
@@ -57,8 +60,7 @@ public class User implements Serializable {
      */
     public void setPassword(String newPass) {
         password = newPass;
-
-        //TODO: save userlist
+        UserList.saveUserList();
     }
 
     /**
@@ -75,8 +77,7 @@ public class User implements Serializable {
      */
     public void setEmail(String newEmail) {
         email = newEmail;
-
-        //TODO: save userlist
+        UserList.saveUserList();
     }
 
     /**
@@ -93,6 +94,7 @@ public class User implements Serializable {
      */
     public void setSalesReported(int newSale) {
         salesReported = newSale;
+        UserList.saveUserList();
     }
     /**
      * Getter for the friends list.
@@ -119,13 +121,14 @@ public class User implements Serializable {
     public ArrayList<Sale> getSaleList() {
         return saleList;
     }
+
     /**
      * Adds a user to this user's friend list. If user
      * is already in friend list, do not do the addition.
      *
      * @param u - User to get wrapped in a Friend object
      *          and added to the friends list.
-     * @return whether or not the addition occured
+     * @return whether or not the addition occurred
      */
     public boolean addFriend(User u) {
         Friend newFriend = new Friend(u);
@@ -153,7 +156,7 @@ public class User implements Serializable {
      * friend list.
      *
      * @param u - the user to remove from the friend list
-     * @return whether or not a removal occured
+     * @return whether or not a removal occurred
      */
     public boolean removeFriend(User u) {
         if(friendList.remove(getFriendFromUser(u))) {
@@ -184,14 +187,27 @@ public class User implements Serializable {
     }
 
     /**
-     * Adds an interest to this user's interest list.
+     * Adds an interest to this user's interest list. If interest
+     * of same name exists, updates the price.
      *
      * @param name - Name of the interest.
      * @param price - Price of the interest.
      */
     public void addInterest(String name, double price) {
-        Interest i = new Interest(name, price);
-        interestList.add(i);
+        boolean itemAlreadyExists = false;
+
+        for(Interest i: interestList) {
+            if(i.getName().equalsIgnoreCase(name)) {
+                i.setPrice(price);
+                itemAlreadyExists = true;
+                break;
+            }
+        }
+
+        if(!itemAlreadyExists) {
+            Interest interest = new Interest(name, price);
+            interestList.add(interest);
+        }
 
         UserList.saveUserList();
     }
@@ -203,8 +219,8 @@ public class User implements Serializable {
      * @param price - Price of the sale.
      * @param location - Location of the sale
      */
-    public void addSale(String name, double price, String location) {
-        Sale s = new Sale(name, price, location);
+    public void addSale(String name, double price, LatLng location) {
+        Sale s = new Sale(name, price, location.latitude, location.longitude);
         saleList.add(s);
 
         UserList.saveUserList();

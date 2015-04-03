@@ -1,26 +1,29 @@
 package com.example.twig.androidActivities;
 
-import android.content.Intent;
-import android.view.View;
 import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-
-import com.example.twig.dataObjects.User;
-import com.example.twig.dataObjects.UserList;
+import com.example.twig.controllers.SaleController;
 import com.example.twig.finalproject.R;
-import com.example.twig.dataObjects.CurrentUser;
 
 
 /**
+ * Activity in which the user can report a sale to his friends.
+ *
  * Created by Piyakorn on 3/3/2015.
  */
 public class SalesReportActivity extends Activity{
+    private String latitude;
+    private String longitude;
     /**
-     * Called upon activity creation.
+     * Called upon activity creation. If activity was created
+     * from map activity, there will be intent extras that
+     * get stored in the temporary variables latitude and longitude.
      *
      * @param savedInstanceState
      */
@@ -31,9 +34,10 @@ public class SalesReportActivity extends Activity{
     }
 
     /**
-     * Method called when the back button is pressed.
+     * Method called when the back button is pressed. Returns to the
+     * sales list activity
      *
-     * @param view - the cancel button
+     * @param view - the back button
      */
     public void backPressed(View view) {
         Intent intent = new Intent(this, SalesListActivity.class);
@@ -41,40 +45,90 @@ public class SalesReportActivity extends Activity{
     }
 
     /**
+     * Method called when set location button is pressed. Hands control off to map activity.
+     * @param view
+     */
+    public void setLocationPressed(View view) {
+        Intent intent = new Intent(this, MapPlaceActivity.class);
+        intent.putExtra("LATITUDE", latitude);
+        intent.putExtra("LONGITUDE", longitude);
+        startActivityForResult(intent, 1);
+    }
+
+    /**
+     * Method called when startActivityForResult finishes.
+     * This gets called by the Map Activity, which returns the
+     * results "LATITUDE" and "LONGITUDE"
+     * @param requestCode
+     * @param resultCode
+     * @param intent
+     */
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        //1: map activity
+        if(requestCode==1) {
+            if(resultCode == RESULT_OK) {
+                latitude = intent.getStringExtra("LATITUDE");
+                longitude = intent.getStringExtra("LONGITUDE");
+                TextView isSet = (TextView)findViewById(R.id.isLocationSet);
+                isSet.setText("\u2713"); //TICK MARK
+                isSet.setTextColor(Color.GREEN);
+            } else {
+                //map activity was cancelled -- no activity necessary
+            }
+        }
+
+        TextView msg = (TextView)findViewById(R.id.message);
+        msg.setVisibility(View.INVISIBLE);
+        //no need for error messages to linger after going to and from new activity
+    }
+
+    /**
      * Method called when the register button is pressed.
      *
      * @param view - the register button
      */
-    public void salesReportPressed(View view) {
-        String name = ((EditText)findViewById(R.id.sale_name_field)).getText().toString();
-        String price = ((EditText)findViewById(R.id.sale_price_field)).getText().toString();
-        String location = ((EditText)findViewById(R.id.sale_location_field)).getText().toString();
-        TextView text = ((TextView)findViewById(R.id.message));
+    public void submitPressed(View view) {
+        EditText nameField = (EditText)findViewById(R.id.sale_name_field);
+        EditText priceField = (EditText)findViewById(R.id.sale_price_field);
 
-        ArrayList<User> userList = UserList.getUserList();
+        String name = nameField.getText().toString();
+        String price = priceField.getText().toString();
 
+        SaleController saleController = SaleController.getSaleController();
+        boolean success = saleController.reportSale(name, price, latitude, longitude, this);
 
+        if(success) {
+            nameField.setText("");
+            priceField.setText("");
+            latitude = null;
+            longitude = null;
 
-        if(name.isEmpty() || price.isEmpty() || location.isEmpty()) {
-            text.setText("One or more fields are empty");
-            text.setVisibility(View.VISIBLE);
-            return;
+            TextView isSet = (TextView)findViewById(R.id.isLocationSet);
+            isSet.setText("");
+
+            nameField.requestFocus();
         }
+    }
 
-        double priceValue = Double.parseDouble(price);
+    /**
+     * Gives visual indicator that location is not yet set.
+     */
+    public void locationNotYetSetHint() {
+        TextView isSet = (TextView)findViewById(R.id.isLocationSet);
+        isSet.setText("X");
+        isSet.setTextColor(Color.RED);
+    }
 
-        if(priceValue <= 0) {
-            text.setText("Max item price must be greater than 0");
-            text.setTextColor(0xFFFF0000);
-            text.setVisibility(View.VISIBLE);
-            return;
-        }
-
-        User c = CurrentUser.getCurrentUser();
-        c.addSale(name, priceValue, location);
-        c.setSalesReported(c.getSalesReported() + 1);
-        Intent intent = new Intent(this, SalesReportActivity.class);
-        startActivity(intent);
-
+    /**
+     * Display message upon invalid login or successful registration.
+     *
+     * @param str the message to display
+     * @param color the color the message should display
+     */
+    public void displayMessage(String str, int color) {
+        TextView msg = (TextView)findViewById(R.id.message);
+        msg.setText(str);
+        msg.setTextColor(color);
+        msg.setVisibility(View.VISIBLE);
     }
 }

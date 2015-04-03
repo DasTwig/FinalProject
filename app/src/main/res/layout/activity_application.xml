@@ -1,17 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="#5c5c5c">
+    android:background="#838383">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="You have successfully logged in"
-        android:id="@+id/successText"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:textSize="20dp" />
+        android:id="@+id/loginText"
+        android:textSize="20dp"
+        android:layout_below="@+id/btnLogout"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Click on sale to see location."
+        android:id="@+id/pressForLocationText"
+        android:textSize="20dp"
+        android:layout_below="@+id/loginText"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="180dp"
@@ -29,7 +40,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:width="180dp"
-        android:text="FriendsList"
+        android:text="Friends List"
         android:id="@+id/btnFriends"
         android:onClick="friendsPressed"
         android:layout_alignParentTop="true"
@@ -39,7 +50,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:width="130dp"
+        android:width="180dp"
         android:text="Interests"
         android:id="@+id/btnInterests"
         android:layout_alignParentBottom="true"
@@ -50,12 +61,20 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:width="150dp"
-        android:text="Reported Sales"
+        android:width="180dp"
+        android:text="My Sales"
         android:id="@+id/btnSales"
-        android:onClick="salesReportPressed"
+        android:onClick="mySalesPressed"
         android:layout_alignBottom="@+id/btnInterests"
         android:layout_alignRight="@+id/btnLogout"
         android:layout_alignEnd="@+id/btnLogout" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/btnInterests"
+        android:layout_below="@+id/pressForLocationText" />
 
 </RelativeLayout>

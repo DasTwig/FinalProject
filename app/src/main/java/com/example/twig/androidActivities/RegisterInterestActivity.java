@@ -7,12 +7,12 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.twig.dataObjects.CurrentUser;
+import com.example.twig.controllers.InterestController;
 import com.example.twig.finalproject.R;
 
-import java.util.ArrayList;
-
 /**
+ * Activity in which a user can add an interest to his account.
+ *
  * Created by Porter Rivers on 2/26/2015.
  */
 public class RegisterInterestActivity extends Activity{
@@ -43,27 +43,31 @@ public class RegisterInterestActivity extends Activity{
      * @param view - the register button
      */
     public void registerPressed(View view) {
-        String name = ((EditText)findViewById(R.id.name_field)).getText().toString();
-        String price = ((EditText)findViewById(R.id.item_price_field)).getText().toString();
-        TextView errorMessage = ((TextView)findViewById(R.id.errorMessage));
+        EditText nameField = (EditText)findViewById(R.id.name_field);
+        EditText priceField = (EditText)findViewById(R.id.item_price_field);
 
+        String name = nameField.getText().toString();
+        String price = priceField.getText().toString();
 
-        if(name.isEmpty() || price.isEmpty()) {
-            errorMessage.setText("One or more fields are empty");
-            errorMessage.setVisibility(View.VISIBLE);
-            return;
+        InterestController interestController = InterestController.getInterestController();
+        boolean success = interestController.registerInterest(name, price, this);
+
+        if(success) {
+            nameField.setText("");
+            priceField.setText("");
+            nameField.requestFocus();
         }
+    }
 
-        double priceValue = Double.parseDouble(price);
-
-        if(priceValue <= 0) {
-            errorMessage.setText("Max item price must be greater than 0");
-            errorMessage.setVisibility(View.VISIBLE);
-            return;
-        }
-
-        CurrentUser.getCurrentUser().addInterest(name, priceValue);
-        Intent intent = new Intent(this, InterestListActivity.class);
-        startActivity(intent);
+    /**
+     * Displays a message to the user.
+     * @param str
+     * @param color
+     */
+    public void displayMessage(String str, int color) {
+        TextView msg = (TextView)findViewById(R.id.message);
+        msg.setText(str);
+        msg.setTextColor(color);
+        msg.setVisibility(View.VISIBLE);
     }
 }

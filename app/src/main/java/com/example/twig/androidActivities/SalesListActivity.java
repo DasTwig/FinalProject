@@ -9,22 +9,23 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.twig.dataObjects.CurrentUser;
-import com.example.twig.dataObjects.Interest;
+import com.example.twig.controllers.SaleController;
 import com.example.twig.dataObjects.Sale;
 import com.example.twig.finalproject.R;
 
-import java.util.ArrayList;
-
 /**
+ * Activity that displays a list of all of the sales that the current user has reported.
+ *
  * Created by Piyakorn on 3/5/2015.
  */
 public class SalesListActivity extends Activity {
     private TextView txt;
     private Button add;
     private ListView sales;
+
     /**
-     * Called upon activity creation.
+     * Called upon activity creation. Populates the list of sales,
+     * and displays how many sales you have reported.
      *
      * @param savedInstanceState
      */
@@ -33,24 +34,35 @@ public class SalesListActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_saleslist);
 
-        ArrayList<Sale> salelist = CurrentUser.getCurrentUser().getSaleList();
         txt = (TextView) findViewById(R.id.num_sales);
-        add = (Button) findViewById(R.id.add_button);
         sales = (ListView) findViewById(R.id.salesList);
 
+        SaleController saleController = SaleController.getSaleController();
+
         ArrayAdapter<Sale> adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,
-                salelist);
+                saleController.getSaleList());
         sales.setAdapter(adapter);
 
-        txt.setText("You have " + salelist.size() + " current sales reported by you.");
+        txt.setText("You have reported " + saleController.saleListSize() + " sale"
+                + ((saleController.saleListSize() == 1) ? "." : "s."));
 
     }
 
+    /**
+     * Called when add sales is pressed. Launches Sale Report Activity.
+     *
+     * @param view add sales button
+     */
     public void addSalePressed(View view) {
         Intent intent = new Intent(this, SalesReportActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * Called when back is pressed. Returns to application activity.
+     *
+     * @param view the back button
+     */
     public void backPressed(View view) {
         Intent intent = new Intent(this, ApplicationActivity.class);
         startActivity(intent);
