@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * Created by Andrew on 3/28/2015.
+ * Created by Andrew Smith on 3/28/2015.
  */
 public class AddFriendTest extends ApplicationTestCase<Application> {
 
